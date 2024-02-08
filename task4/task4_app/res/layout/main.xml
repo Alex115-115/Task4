@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textAppearance="?android:textAppearanceLarge" />
+        <TextView
+            android:id="@+id/cpuTemperatureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CPU Temperature: "
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/gpuTemperatureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GPU Temperature: "
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/ambientTemperatureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ambient Temperature: "
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/averageCpuTemperatureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Average CPU Temperature: "
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/averageGpuTemperatureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Average GPU Temperature: "
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/averageAmbientTemperatureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Average Ambient Temperature: "
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/maxCpuTemperatureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max CPU Temperature: "
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/maxGpuTemperatureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max GPU Temperature: "
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/maxAmbientTemperatureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max Ambient Temperature: "
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,39 @@
+
+android_app {
+  name: "Task4_App",
+  manifest: "AndroidManifest.xml",
+  privileged: true,
+  platform_apis: true,
+  certificate: "platform",
+
+  srcs: [
+    "src/**/*.kt",
+    "src/**/*.java",
+    "aidl/**/*.aidl",
+  ],
+
+  resource_dirs: [
+    "res/",
+  ],
+
+  static_libs: [
+    "androidx.appcompat_appcompat",
+    "androidx.localbroadcastmanager_localbroadcastmanager",
+  ],
+
+  libs: [
+    "telephony-common",
+  ],
+
+  kotlincflags: [
+    "-verbose",
+  ],
+
+  optimize: {
+    optimize: true,
+    obfuscate: true,
+    proguard_flags_files: [
+      "proguard.flags",
+    ],
+  },
+}

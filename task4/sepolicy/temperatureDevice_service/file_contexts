@@ -1,0 +1,2 @@
+/vendor/bin/temperatureDevice_service    u:object_r:temperatureDevice_service_exec:s0
+

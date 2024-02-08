@@ -1,0 +1,64 @@
+cc_binary {
+    name: "example_service",
+    srcs: ["native/src/**/*.cpp"],
+    local_include_dirs: ["native/src/impl"],
+    vendor: true,
+    init_rc: ["example_service.rc"],
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libbase",
+        "libbinder_ndk",
+        "example.service.api-V2-ndk",
+        "android.hardware.temperatureDevice-V2-ndk",
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wunused",
+        "-Wunreachable-code",
+        "-Wshadow",
+    ],
+}
+
+aidl_interface {
+    name: "example.service.api",
+    vendor_available: true,
+    srcs: ["interfaces/**/*.aidl"],
+    local_include_dir: "interfaces",
+
+    // "1",
+
+    stability: "vintf",
+    backend: {
+        java: {
+            enabled: true,
+            platform_apis: true,
+        },
+        cpp: {
+            enabled: true,
+        },
+        ndk: {
+            enabled: true,
+        },
+    },
+    versions_with_info: [
+        // {
+        //     version: "1",
+        //     imports: [],
+        // },
+        // {
+        //     version: "1",
+        //     imports: [],
+        // },
+        {
+            version: "2",
+            imports: [],
+        },
+
+    ],
+    frozen: true,
+    // frozen: false,
+
+}

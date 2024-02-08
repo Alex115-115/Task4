@@ -1,0 +1,69 @@
+cc_binary {
+    name: "temperatureDevice_service",
+    srcs: ["native/src/**/*.cpp"],
+    local_include_dirs: ["native/src/impl"],
+    vendor: true,
+    init_rc: ["temperatureDevice_service.rc"],
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.temperatureDevice-V2-ndk",
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wunused",
+        "-Wunreachable-code",
+        "-Wshadow",
+    ],
+}
+
+prebuilt_etc {
+
+    name: "temperature.csv",
+    src: "temperature.csv",
+    filename_from_src: true,
+    vendor: true,
+
+}
+
+aidl_interface {
+    name: "android.hardware.temperatureDevice",
+    vendor_available: true,
+    srcs: ["interfaces/**/*.aidl"],
+    local_include_dir: "interfaces",
+
+    // "1",
+
+    stability: "vintf",
+    backend: {
+        java: {
+            enabled: true,
+            platform_apis: true,
+        },
+        cpp: {
+            enabled: true,
+        },
+        ndk: {
+            enabled: true,
+        },
+    },
+    versions_with_info: [
+
+        // {
+        //     version: "1",
+        //     imports: [],
+        // },
+        {
+            version: "2",
+            imports: [],
+        },
+
+    ],
+    frozen: true,
+    // frozen: true,
+
+}
