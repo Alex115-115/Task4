@@ -1,0 +1,2 @@
+/vendor/bin/enviro_thermal_service     u:object_r:enviro_thermal_service_exec:s0
+

@@ -1,9 +1,9 @@
 cc_binary {
-	name: "example_service_user_app",
+	name: "enviro_thermal_service_user_app",
 	device_specific: true,
 	srcs: ["main.cpp"],
 	shared_libs: [
-		"example.service.api-V2-ndk",
+		"enviro_thermal_service.service.api-V2-ndk",
 		"android.hardware.temperatureDevice-V2-ndk",
 		"liblog",
 		"libbinder_ndk",

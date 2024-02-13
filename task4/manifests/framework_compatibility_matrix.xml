@@ -1,8 +1,8 @@
 <compatibility-matrix version="1.0" type="framework">
     <hal format="aidl" optional="true">
-        <name>example.service.api</name>
+        <name>enviro_thermal_service.service.api</name>
         <interface>
-            <name>IExampleService</name>
+            <name>IEnviroThermalService</name>
             <instance>default</instance>
         </interface>
     </hal>

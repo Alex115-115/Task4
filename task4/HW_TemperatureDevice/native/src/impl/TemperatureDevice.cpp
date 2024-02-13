@@ -37,24 +37,14 @@ TemperatureData temperatureData;
    return S_INSTANCE;
 }
 
-TemperatureDevice::TemperatureDevice()
-{
+TemperatureDevice::TemperatureDevice(){}
 
-}
-
-TemperatureDevice::~TemperatureDevice()
-{
-
-}
-
-
-
+TemperatureDevice::~TemperatureDevice(){}
 
 ::ndk::ScopedAStatus TemperatureDevice::getAmbientTemperatureHW(float* _aidl_return)
 {
   
    *_aidl_return = TemperatureMonitor::Ambient();
-
    return ndk::ScopedAStatus::ok();
 }
 

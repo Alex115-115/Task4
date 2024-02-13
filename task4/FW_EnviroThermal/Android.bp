@@ -1,14 +1,15 @@
 cc_binary {
-    name: "temperatureDevice_service",
+    name: "enviro_thermal_service",
     srcs: ["native/src/**/*.cpp"],
     local_include_dirs: ["native/src/impl"],
     vendor: true,
-    init_rc: ["temperatureDevice_service.rc"],
+    init_rc: ["enviro_thermal_service.rc"],
     shared_libs: [
         "liblog",
         "libutils",
         "libbase",
         "libbinder_ndk",
+        "enviro_thermal_service.service.api-V2-ndk",
         "android.hardware.temperatureDevice-V2-ndk",
     ],
     cflags: [
@@ -21,17 +22,8 @@ cc_binary {
     ],
 }
 
-prebuilt_etc {
-
-    name: "temperature.csv",
-    src: "temperature.csv",
-    filename_from_src: true,
-    vendor: true,
-
-}
-
 aidl_interface {
-    name: "android.hardware.temperatureDevice",
+    name: "enviro_thermal_service.service.api",
     vendor_available: true,
     srcs: ["interfaces/**/*.aidl"],
     local_include_dir: "interfaces",
@@ -50,7 +42,6 @@ aidl_interface {
         },
     },
     versions_with_info: [
-
         {
             version: "2",
             imports: [],
@@ -58,4 +49,5 @@ aidl_interface {
 
     ],
     frozen: true,
+
 }

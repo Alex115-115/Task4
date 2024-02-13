@@ -1,0 +1,7 @@
+service enviro_thermal_service /vendor/bin/enviro_thermal_service
+	class hal
+	user system
+	group system
+
+on boot
+	start enviro_thermal_service
